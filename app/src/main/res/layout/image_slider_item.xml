@@ -1,18 +1,25 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootItem"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rootItem"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/white">
+    android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/image1" />
+        app:cardCornerRadius="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_1" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/titleTextView"
@@ -20,8 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Title"
-        android:textSize="18sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/descriptionTextView"
@@ -29,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Description"
-        android:textSize="14sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
 </LinearLayout>

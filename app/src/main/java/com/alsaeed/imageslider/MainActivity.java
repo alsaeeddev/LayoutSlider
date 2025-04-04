@@ -13,11 +13,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private LinearLayout dotLayout;
+    private final static int DELAY_IN_MILLI_SEC = 4000;
 
     private int[] images = {
-            R.drawable.image1,
-            R.drawable.image1,
-            R.drawable.image1
+            R.drawable.image_1,
+            R.drawable.image_2,
+            R.drawable.image_3
     }; // Replace with your images
     private String[] titles = {"Title 1", "Title 2", "Title 3"};
     private String[] descriptions = {
@@ -101,15 +102,15 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 int nextItem = (viewPager.getCurrentItem() + 1) % images.length;
                 viewPager.setCurrentItem(nextItem, true);
-                slideHandler.postDelayed(this, 3000);
+                slideHandler.postDelayed(this, DELAY_IN_MILLI_SEC);
             }
         };
-        slideHandler.postDelayed(slideRunnable, 3000);
+        slideHandler.postDelayed(slideRunnable, DELAY_IN_MILLI_SEC);
     }
 
     private void resetAutoSlide() {
         slideHandler.removeCallbacks(slideRunnable);
-        slideHandler.postDelayed(slideRunnable, 3000);
+        slideHandler.postDelayed(slideRunnable, DELAY_IN_MILLI_SEC);
     }
 
     @Override
